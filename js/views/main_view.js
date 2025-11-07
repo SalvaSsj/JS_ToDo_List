@@ -26,6 +26,10 @@ function _injectModalHTML() {
                                     <input id="modal-completed" type="checkbox" />
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input id="modal-date" type="date" />
+                            </div>
                             <input type="hidden" id="modal-id" />
                         </form>
                     </div>
@@ -45,6 +49,7 @@ export class MainView {
         this.tableBody = document.querySelector('#table tbody');
         this.titleInput = document.getElementById('title');
         this.descriptionInput = document.getElementById('description');
+        this.dateInput = document.getElementById('date');
         this.alert = document.getElementById('alert');
         this.addBtn = document.getElementById('add');
 
@@ -55,6 +60,7 @@ export class MainView {
         this.modalTitleInput = document.getElementById('modal-title');
         this.modalDescriptionInput = document.getElementById('modal-description');
         this.modalCompletedCheckbox = document.getElementById('modal-completed');
+        this.modalDateInput = document.getElementById('modal-date');
         this.modalAlert = document.getElementById('modal-alert');
         this.modalSaveBtn = document.getElementById('modal-btn');
     }
@@ -69,6 +75,7 @@ export class MainView {
                 <td class="text-center">
                     <input type="checkbox" data-action="toggle" ${completedChecked}>
                 </td>
+                <td class="text-center">${todo.date}</td>
                 <td class="text-right">
                     <button class="btn btn-primary mb-1" data-action="edit">
                         <i class="fa fa-pencil"></i>

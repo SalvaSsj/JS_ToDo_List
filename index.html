@@ -162,6 +162,14 @@
                                 placeholder="Watch JS Tutorials"
                         >
                     </div>
+                    <div class="px-sm-2 col-sm-7 d-sm-flex align-items-center mt-2 mt-sm-0">
+                      <label class="m-sm-0">Fecha</label>
+                      <input
+                              type="date"
+                              id="date"
+                              class="form-control ml-sm-2"
+                              placeholder="dd/mm/aaaa">
+                    </div>
                     <div class="col-sm-2 d-sm-flex justify-content-end mt-4 mt-sm-0">
                         <button type="button" class="btn btn-info btn-block" id="add">
                             Add
@@ -172,7 +180,6 @@
         </div>
 
         <!-- Table -->
-
         <div class="mt-5">
             <table class="table table-striped" id="table">
                 <thead>
@@ -184,6 +191,7 @@
                             Completed
                         </div>
                     </th>
+                    <th scope="col">Fecha</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -197,6 +205,9 @@
                     </td>
                     <td class="text-center">
                         <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="date">
                     </td>
                     <td class="text-right">
                         <button class="btn btn-primary mb-1">

@@ -18,14 +18,15 @@ export class UpdateController {
     handleAddTodo() {
         const title = this.view.titleInput.value.trim();
         const description = this.view.descriptionInput.value.trim();
+        const date = this.view.dateInput.value;
 
-        if (title === '' || description === '') {
-            this.view.showAlert("El título y la descripción son requeridos");
+        if (title === '' || description === '' || date==='') {
+            this.view.showAlert("El título, la descripción y la fecha son requeridos");
             return;
         }
 
         this.view.hideAlert();
-        this.model.add(title, description); 
+        this.model.add(title, description,date); 
         this.view.render(this.model.getTodos()); 
         this.view.clearInputs(); 
     }
@@ -52,16 +53,18 @@ export class UpdateController {
 
     handleUpdateTodo() {
         const id = parseInt(this.view.modalIdInput.value);
+        
         const title = this.view.modalTitleInput.value.trim();
         const description = this.view.modalDescriptionInput.value.trim();
         const completed = this.view.modalCompletedCheckbox.checked;
+        const date = this.view.modalDateInput.value;
 
-        if (title === '' || description === '') {
+        if (title === '' || description === '' || date===' ') {
             this.view.showAlert("El título y la descripción son requeridos", true);
             return;
         }
 
-        this.model.update(id, title, description, completed);
+        this.model.update(id, title, description, completed, date);
         this.view.render(this.model.getTodos());
         this.view.closeEditModal();
     }
