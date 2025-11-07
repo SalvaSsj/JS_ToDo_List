@@ -6,6 +6,7 @@ export class UpdateView extends MainView {
         this.modalDescriptionInput.value = todo.description;
         this.modalCompletedCheckbox.checked = todo.completed;
         this.modalDateInput.value = todo.date;
+        this.modalTimeInput.value = todo.time;
         this.modalIdInput.value = todo.id;
         this.hideAlert(true);
         this.modal.show();

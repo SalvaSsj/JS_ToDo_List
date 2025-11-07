@@ -30,6 +30,10 @@ function _injectModalHTML() {
                                 <label>Date</label>
                                 <input id="modal-date" type="date" />
                             </div>
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input id="modal-time" type="time" />
+                            </div>
                             <input type="hidden" id="modal-id" />
                         </form>
                     </div>
@@ -50,6 +54,7 @@ export class MainView {
         this.titleInput = document.getElementById('title');
         this.descriptionInput = document.getElementById('description');
         this.dateInput = document.getElementById('date');
+        this.timeInput = document.getElementById('time');
         this.alert = document.getElementById('alert');
         this.addBtn = document.getElementById('add');
 
@@ -61,6 +66,7 @@ export class MainView {
         this.modalDescriptionInput = document.getElementById('modal-description');
         this.modalCompletedCheckbox = document.getElementById('modal-completed');
         this.modalDateInput = document.getElementById('modal-date');
+        this.modalTimeInput = document.getElementById('modal-time');
         this.modalAlert = document.getElementById('modal-alert');
         this.modalSaveBtn = document.getElementById('modal-btn');
     }
@@ -76,6 +82,7 @@ export class MainView {
                     <input type="checkbox" data-action="toggle" ${completedChecked}>
                 </td>
                 <td class="text-center">${todo.date}</td>
+                <td class="text-center">${todo.time}</td>
                 <td class="text-right">
                     <button class="btn btn-primary mb-1" data-action="edit">
                         <i class="fa fa-pencil"></i>

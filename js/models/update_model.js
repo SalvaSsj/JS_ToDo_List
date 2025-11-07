@@ -1,25 +1,27 @@
 import { TodoModelBase } from './todo_model.js';
 
 export class UpdateModel extends TodoModelBase {
-    add(title, description, date) {
+    add(title, description, date,time) {
         const newTodo = {
             id: Date.now(),
             title,
             description,
             completed: false,
-            date
+            date,
+            time
         };
         this.todos.push(newTodo);
         this._save();
     }
 
-    update(id, newTitle, newDescription, newCompleted, newDate) {
+    update(id, newTitle, newDescription, newCompleted, newDate, newTime) {
         const todo = this.todos.find(t => t.id === id);
         if (todo) {
             todo.title = newTitle;
             todo.description = newDescription;
             todo.completed = newCompleted;
             todo.date = newDate;
+            todo.time = newTime;
             this._save();
         }
     }
